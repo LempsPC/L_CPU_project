@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon May  7 17:40:36 2018
+# Process ID: 3812
+# Current directory: C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12760 C:\Users\Lemps\Desktop\L-CPU-27-apr-hommik\L-CPU.xpr
+# Log file: C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/vivado.log
+# Journal file: C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L-CPU.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L_CPU_tester1_behav.wcfg
+source L_CPU_tester1.tcl
+close_sim
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv w ]
+add_files -fileset sim_1 C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top L_CPU_tester2 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+add_wave {{/L_CPU_tester2/my_cpu}} 
+relaunch_sim
+save_wave_config {C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L_CPU_tester1_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+add_wave {{/L_CPU_tester2/my_cpu/Memory}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/Users/Lemps/Desktop/L-CPU-27-apr-hommik/L_CPU_tester1_behav.wcfg}
+close_sim
+close_project
+create_project L_CPU_with_systemverilog C:/Users/Lemps/Desktop/L_CPU_with_systemverilog -part xc7a75ticsg324-1L
+set_property target_language VHDL [current_project]
+file mkdir C:/Users/Lemps/Desktop/L_CPU_with_systemverilog/L_CPU_with_systemverilog.srcs/sources_1/new
+close [ open C:/Users/Lemps/Desktop/L_CPU_with_systemverilog/L_CPU_with_systemverilog.srcs/sources_1/new/L_CPU_beh.vhd w ]
+add_files C:/Users/Lemps/Desktop/L_CPU_with_systemverilog/L_CPU_with_systemverilog.srcs/sources_1/new/L_CPU_beh.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/Lemps/Desktop/L_CPU_with_systemverilog/L_CPU_with_systemverilog.srcs/sources_1/new/Mem.vhd w ]
+add_files C:/Users/Lemps/Desktop/L_CPU_with_systemverilog/L_CPU_with_systemverilog.srcs/sources_1/new/Mem.vhd
+update_compile_order -fileset sources_1

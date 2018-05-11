@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../L-CPU.srcs/sources_1/new/Mem.vhd" \
+"../../../../L-CPU.srcs/sim_1/new/Memtest_x8.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,1 @@
+-wto "54bfd1901e08409fa20876b350ea7eb1" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "Memtest_x8_behav" "xil_defaultlib.Memtest_x8" -log "elaborate.log" 
