@@ -11,21 +11,28 @@ use IEEE.numeric_std.all;
 entity L_CPU is
 port(   reset: in std_logic;
     clk: in std_logic;
-    Flags: out std_logic_vector(4 downto 0));
+    Flags: out std_logic_vector(4 downto 0);
+    debug: in std_logic;
+    Data_to_ram_debug, Aadress_to_ram_debug : in std_logic_vector(7 downto 0 )
+    );
 end L_CPU;  
  
 architecture beh of L_CPU is
 
+
 component Mem is 
-  generic (BitWidth: integer := 8);
-  port ( RdAddress: in std_logic_vector (BitWidth-1 downto 0);
-         Data_in: in std_logic_vector (BitWidth-1 downto 0);
-			WrtAddress: in std_logic_vector (BitWidth-1 downto 0);
-         clk: in std_logic;
-         RW: in std_logic;
-         rst: in std_logic;
-         Data_Out: out std_logic_vector (BitWidth-1 downto 0) 
-    );
+      generic (BitWidth: integer := 8);
+      port ( RdAddress: in std_logic_vector (BitWidth-1 downto 0);
+             Data_in: in std_logic_vector (BitWidth-1 downto 0);
+             WrtAddress: in std_logic_vector (BitWidth-1 downto 0);
+             clk: in std_logic;
+             RW: in std_logic;
+             rst: in std_logic;
+             debug : in std_logic;
+             Data_Out: out std_logic_vector (BitWidth-1 downto 0);
+             Data_in_debug: in std_logic_vector (BitWidth-1 downto 0);
+             WrtAddress_debug: in std_logic_vector (BitWidth-1 downto 0) 
+        );
 end component Mem; 
  
 function add_sub (a1, b1: std_logic_vector(7 downto 0); carry_in, ctrl : std_logic) return std_logic_vector is --inspired by Hardi
@@ -48,12 +55,13 @@ signal state, next_state : State_type := PC_to_MAR;
  
 signal inner_flags, operators : std_logic_vector(2 downto 0) := (others => '0');
 signal inputs : std_logic_vector(4 downto 0) := (others => '0');
-signal RegA, RegB, RegC, RegM, MAR, IR : std_logic_vector(7 downto 0) := (others => '0');
+signal RegA, RegB, RegC, RegM, MAR, IR, MDR : std_logic_vector(7 downto 0) := (others => '0');
 signal read_write : std_logic := '0';
 signal data_to_ram, data_from_ram, ram_address : std_logic_vector(7 downto 0 ) := (others => '0');
 
 signal PC :  std_logic_vector(7 downto 0) := "00000000";
-signal MDR :  std_logic_vector(7 downto 0) := "00010001";
+--signal Data_to_ram_debug, Aadress_to_ram_debug : std_logic_vector (7 downto 0);
+
  
 begin
 
@@ -66,7 +74,11 @@ Port map(clk => clk,
          WrtAddress => ram_address,
          rst => reset,
          Data_in => data_to_ram,
-         Data_out => data_from_ram);
+         Data_out => data_from_ram,
+         debug => debug,
+         Data_in_debug => Data_to_ram_debug,
+         WrtAddress_debug => Aadress_to_ram_debug
+         );
 
 
 

@@ -3,103 +3,116 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="L_CPU_tester1_behav.wdb" id="1">
+      <db_ref path="L_CPU_tester2_behav.wdb" id="1">
          <top_modules>
-            <top_module name="L_CPU_tester1" />
+            <top_module name="L_CPU_tester2" />
+            <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="116770000fs"></ZoomStartTime>
-      <ZoomEndTime time="515570001fs"></ZoomEndTime>
-      <Cursor1Time time="260000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="165687142fs"></ZoomEndTime>
+      <Cursor1Time time="101000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="149"></NameColumnWidth>
-      <ValueColumnWidth column_width="93"></ValueColumnWidth>
+      <ValueColumnWidth column_width="85"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="21" />
-   <wvobject fp_name="/L_CPU_tester1/UUT/reset" type="logic">
+   <WVObjectSize size="24" />
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/clk" type="logic">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/Flags" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Flags" type="array">
       <obj_property name="ElementShortName">Flags[4:0]</obj_property>
       <obj_property name="ObjectShortName">Flags[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/state" type="other">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/debug" type="logic">
+      <obj_property name="ElementShortName">debug</obj_property>
+      <obj_property name="ObjectShortName">debug</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Data_to_ram_debug" type="array">
+      <obj_property name="ElementShortName">Data_to_ram_debug[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_to_ram_debug[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Aadress_to_ram_debug" type="array">
+      <obj_property name="ElementShortName">Aadress_to_ram_debug[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Aadress_to_ram_debug[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
       <obj_property name="ObjectShortName">state</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/next_state" type="other">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/next_state" type="other">
       <obj_property name="ElementShortName">next_state</obj_property>
       <obj_property name="ObjectShortName">next_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/inner_flags" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/inner_flags" type="array">
       <obj_property name="ElementShortName">inner_flags[2:0]</obj_property>
       <obj_property name="ObjectShortName">inner_flags[2:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/operators" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/operators" type="array">
       <obj_property name="ElementShortName">operators[2:0]</obj_property>
       <obj_property name="ObjectShortName">operators[2:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/inputs" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/inputs" type="array">
       <obj_property name="ElementShortName">inputs[4:0]</obj_property>
       <obj_property name="ObjectShortName">inputs[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/RegA" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/RegA" type="array">
       <obj_property name="ElementShortName">RegA[7:0]</obj_property>
       <obj_property name="ObjectShortName">RegA[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/RegB" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/RegB" type="array">
       <obj_property name="ElementShortName">RegB[7:0]</obj_property>
       <obj_property name="ObjectShortName">RegB[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/RegC" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/RegC" type="array">
       <obj_property name="ElementShortName">RegC[7:0]</obj_property>
       <obj_property name="ObjectShortName">RegC[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/RegM" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/RegM" type="array">
       <obj_property name="ElementShortName">RegM[7:0]</obj_property>
       <obj_property name="ObjectShortName">RegM[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/MAR" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/MAR" type="array">
       <obj_property name="ElementShortName">MAR[7:0]</obj_property>
       <obj_property name="ObjectShortName">MAR[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/MDR" type="array">
-      <obj_property name="ElementShortName">MDR[7:0]</obj_property>
-      <obj_property name="ObjectShortName">MDR[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/IR" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/IR" type="array">
       <obj_property name="ElementShortName">IR[7:0]</obj_property>
       <obj_property name="ObjectShortName">IR[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/read_write" type="logic">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/MDR" type="array">
+      <obj_property name="ElementShortName">MDR[7:0]</obj_property>
+      <obj_property name="ObjectShortName">MDR[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/read_write" type="logic">
       <obj_property name="ElementShortName">read_write</obj_property>
       <obj_property name="ObjectShortName">read_write</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/data_to_ram" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/data_to_ram" type="array">
       <obj_property name="ElementShortName">data_to_ram[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_to_ram[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/data_from_ram" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/data_from_ram" type="array">
       <obj_property name="ElementShortName">data_from_ram[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_from_ram[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/ram_address" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/ram_address" type="array">
       <obj_property name="ElementShortName">ram_address[7:0]</obj_property>
       <obj_property name="ObjectShortName">ram_address[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/PC" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/PC" type="array">
       <obj_property name="ElementShortName">PC[7:0]</obj_property>
       <obj_property name="ObjectShortName">PC[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/L_CPU_tester1/UUT/Memory/Mem" type="array">
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/Mem" type="array">
       <obj_property name="ElementShortName">Mem[0:255][7:0]</obj_property>
       <obj_property name="ObjectShortName">Mem[0:255][7:0]</obj_property>
    </wvobject>
