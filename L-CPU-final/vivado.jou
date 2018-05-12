@@ -2,67 +2,10 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Thu May 10 14:07:02 2018
-# Process ID: 18344
-# Current directory: C:/Users/LempsPC/Desktop/L-CPU-final
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18640 C:\Users\LempsPC\Desktop\L-CPU-final\L-CPU.xpr
-# Log file: C:/Users/LempsPC/Desktop/L-CPU-final/vivado.log
-# Journal file: C:/Users/LempsPC/Desktop/L-CPU-final\vivado.jou
+# Start of session at: Sat May 12 20:50:31 2018
+# Process ID: 12328
+# Current directory: C:/Users/Lemps/L_CPU_project/L-CPU-final
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12300 C:\Users\Lemps\L_CPU_project\L-CPU-final\L-CPU.xpr
+# Log file: C:/Users/Lemps/L_CPU_project/L-CPU-final/vivado.log
+# Journal file: C:/Users/Lemps/L_CPU_project/L-CPU-final\vivado.jou
 #-----------------------------------------------------------
-start_gui
-open_project C:/Users/LempsPC/Desktop/L-CPU-final/L-CPU.xpr
-update_compile_order -fileset sources_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top L_CPU_tester1 [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config C:/Users/LempsPC/Desktop/L-CPU-final/L_CPU_tester1_behav.wcfg
-source L_CPU_tester1.tcl
-close_sim
-launch_simulation
-open_wave_config C:/Users/LempsPC/Desktop/L-CPU-final/L_CPU_tester1_behav.wcfg
-source L_CPU_tester1.tcl
-log_wave -r {/L_CPU_tester1/UUT} 
-add_wave {{/L_CPU_tester1/UUT/Memory/Mem}} 
-add_wave {{/L_CPU_tester1/UUT/reset}} {{/L_CPU_tester1/UUT/clk}} {{/L_CPU_tester1/UUT/Flags}} {{/L_CPU_tester1/UUT/state}} {{/L_CPU_tester1/UUT/next_state}} {{/L_CPU_tester1/UUT/inner_flags}} {{/L_CPU_tester1/UUT/operators}} {{/L_CPU_tester1/UUT/inputs}} {{/L_CPU_tester1/UUT/RegA}} {{/L_CPU_tester1/UUT/RegB}} {{/L_CPU_tester1/UUT/RegC}} {{/L_CPU_tester1/UUT/RegM}} {{/L_CPU_tester1/UUT/MAR}} {{/L_CPU_tester1/UUT/IR}} {{/L_CPU_tester1/UUT/read_write}} {{/L_CPU_tester1/UUT/data_to_ram}} {{/L_CPU_tester1/UUT/data_from_ram}} {{/L_CPU_tester1/UUT/ram_address}} {{/L_CPU_tester1/UUT/PC}} {{/L_CPU_tester1/UUT/MDR}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-save_wave_config {C:/Users/LempsPC/Desktop/L-CPU-final/L_CPU_tester1_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config C:/Users/LempsPC/Desktop/L-CPU-final/L_CPU_tester1_behav.wcfg
-source L_CPU_tester1.tcl
-close_sim
-launch_simulation
-open_wave_config C:/Users/LempsPC/Desktop/L-CPU-final/L_CPU_tester1_behav.wcfg
-source L_CPU_tester1.tcl
-relaunch_sim
-run 10 ns
-run 10 ns
-run 10 us
-relaunch_sim
-run 10 us
-relaunch_sim
-run 10 us
-relaunch_sim
-run 10 us
-relaunch_sim
-run 1 us
-relaunch_sim
-relaunch_sim
-run 1 us
-run 1 us
-run 1 us
-run 1 us
-relaunch_sim
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us

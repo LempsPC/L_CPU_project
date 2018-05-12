@@ -1,0 +1,93 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 12328
+License: Customer
+
+Current time: 	Sat May 12 20:50:51 EEST 2018
+Time zone: 	Eastern European Time (Europe/Helsinki)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 222 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	Lemps
+User home directory: C:/Users/Lemps
+User working directory: C:/Users/Lemps/L_CPU_project/L-CPU-final
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.4
+RDI_DATADIR: C:/Xilinx/Vivado/2017.4/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/Lemps/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/Lemps/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/Lemps/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Lemps/L_CPU_project/L-CPU-final/vivado.log
+Vivado journal file location: 	C:/Users/Lemps/L_CPU_project/L-CPU-final/vivado.jou
+Engine tmp dir: 	C:/Users/Lemps/L_CPU_project/L-CPU-final/.Xil/Vivado-12328-DESKTOP-80EMB83
+
+GUI allocated memory:	180 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 594 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 48 MB (+48042kb) [00:00:06]
+// [Engine Memory]: 483 MB (+355068kb) [00:00:06]
+// Opening Vivado Project: C:\Users\Lemps\L_CPU_project\L-CPU-final\L-CPU.xpr. Version: Vivado v2017.4 
+// bs (cj):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// Tcl Message: open_project C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.xpr 
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 75 MB (+25090kb) [00:00:09]
+// [Engine Memory]: 537 MB (+30827kb) [00:00:09]
+// [GUI Memory]: 96 MB (+18406kb) [00:00:10]
+// [GUI Memory]: 109 MB (+8364kb) [00:00:10]
+// [Engine Memory]: 580 MB (+17184kb) [00:00:10]
+// [GUI Memory]: 119 MB (+4779kb) [00:00:10]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 600 MB. GUI used memory: 41 MB. Current time: 5/12/18 8:50:52 PM EEST
+// Project name: L-CPU; location: C:/Users/Lemps/L_CPU_project/L-CPU-final; part: xc7a100ticsg324-1L
+// [Engine Memory]: 612 MB (+3095kb) [00:00:11]
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 4); // B (D, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 5); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, L_CPU_tester2 (L_CPU_tester2.sv)]", 6, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, L_CPU_tester2 (L_CPU_tester2.sv)]", 6, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+selectCodeEditor("L_CPU_tester2.sv", 171, 170); // cd (w, cj)
+selectCodeEditor("L_CPU_tester2.sv", 67, 176); // cd (w, cj)

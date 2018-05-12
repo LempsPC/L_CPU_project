@@ -31,8 +31,12 @@ begin
     if rst = '1' then 
       Mem <= ( others => "00000000");
     elsif rising_edge(clk) then
-      if RW = '1' then
-        Mem(to_integer(unsigned(WrtAddress(7 downto 0)))) <= Data_in;
+      if debug = '1' then
+            Mem(to_integer(unsigned(WrtAddress_debug(7 downto 0)))) <= Data_in_debug;
+      else
+          if RW = '1' then
+            Mem(to_integer(unsigned(WrtAddress(7 downto 0)))) <= Data_in;
+          end if;
       end if;
   
     end if;
