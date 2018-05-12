@@ -45,38 +45,41 @@
 typedef void (*funcp)(char *, char *);
 extern int main(int, char**);
 extern void execute_2(char*, char *);
-extern void execute_3(char*, char *);
-extern void execute_70(char*, char *);
-extern void execute_60(char*, char *);
-extern void execute_64(char*, char *);
-extern void execute_65(char*, char *);
-extern void execute_62(char*, char *);
-extern void execute_63(char*, char *);
-extern void execute_67(char*, char *);
 extern void execute_68(char*, char *);
 extern void execute_69(char*, char *);
+extern void execute_74(char*, char *);
+extern void execute_61(char*, char *);
+extern void execute_62(char*, char *);
+extern void execute_66(char*, char *);
+extern void execute_67(char*, char *);
+extern void execute_64(char*, char *);
+extern void execute_65(char*, char *);
 extern void execute_71(char*, char *);
 extern void execute_72(char*, char *);
 extern void execute_73(char*, char *);
-extern void execute_74(char*, char *);
 extern void execute_75(char*, char *);
-extern void transaction_7(char*, char*, unsigned, unsigned, unsigned);
-extern void vhdl_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
+extern void execute_76(char*, char *);
+extern void execute_77(char*, char *);
+extern void execute_78(char*, char *);
+extern void execute_79(char*, char *);
 extern void transaction_9(char*, char*, unsigned, unsigned, unsigned);
+extern void vhdl_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
+extern void transaction_11(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_28(char*, char*, unsigned, unsigned, unsigned);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
 extern void transaction_0(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_1(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_3(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_4(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_5(char*, char*, unsigned, unsigned, unsigned);
-funcp funcTab[25] = {(funcp)execute_2, (funcp)execute_3, (funcp)execute_70, (funcp)execute_60, (funcp)execute_64, (funcp)execute_65, (funcp)execute_62, (funcp)execute_63, (funcp)execute_67, (funcp)execute_68, (funcp)execute_69, (funcp)execute_71, (funcp)execute_72, (funcp)execute_73, (funcp)execute_74, (funcp)execute_75, (funcp)transaction_7, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_9, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_0, (funcp)transaction_1, (funcp)transaction_3, (funcp)transaction_4, (funcp)transaction_5};
-const int NumRelocateId= 25;
+funcp funcTab[28] = {(funcp)execute_2, (funcp)execute_68, (funcp)execute_69, (funcp)execute_74, (funcp)execute_61, (funcp)execute_62, (funcp)execute_66, (funcp)execute_67, (funcp)execute_64, (funcp)execute_65, (funcp)execute_71, (funcp)execute_72, (funcp)execute_73, (funcp)execute_75, (funcp)execute_76, (funcp)execute_77, (funcp)execute_78, (funcp)execute_79, (funcp)transaction_9, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_11, (funcp)transaction_28, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_0, (funcp)transaction_1, (funcp)transaction_3, (funcp)transaction_4, (funcp)transaction_5};
+const int NumRelocateId= 28;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/L_CPU_tester2_behav/xsim.reloc",  (void **)funcTab, 25);
-	iki_vhdl_file_variable_register(dp + 17480);
-	iki_vhdl_file_variable_register(dp + 17536);
+	iki_relocate(dp, "xsim.dir/L_CPU_tester2_behav/xsim.reloc",  (void **)funcTab, 28);
+	iki_vhdl_file_variable_register(dp + 18288);
+	iki_vhdl_file_variable_register(dp + 18344);
 
 
 	/*Populate the transaction function pointer field in the whole net structure */
@@ -89,10 +92,11 @@ void sensitize(char *dp)
 
 void simulate(char *dp)
 {
+iki_register_root_pointers(1, 13864, 1,0) ; 
 	iki_schedule_processes_at_time_zero(dp, "xsim.dir/L_CPU_tester2_behav/xsim.reloc");
 	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
 
-	iki_vlog_schedule_transaction_signal_fast_vhdl_value_time_0(dp + 20856, dp + 19912, 0, 4, 0, 4, 5, 1);
+	iki_vlog_schedule_transaction_signal_fast_vhdl_value_time_0(dp + 22280, dp + 20776, 0, 4, 0, 4, 5, 1);
 	iki_execute_processes();
 
 	// Schedule resolution functions for the multiply driven Verilog nets that have strength

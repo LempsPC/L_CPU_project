@@ -56,14 +56,17 @@ signal state, next_state : State_type := PC_to_MAR;
 signal inner_flags, operators : std_logic_vector(2 downto 0) := (others => '0');
 signal inputs : std_logic_vector(4 downto 0) := (others => '0');
 signal RegA, RegB, RegC, RegM, MAR, IR, MDR : std_logic_vector(7 downto 0) := (others => '0');
-signal read_write : std_logic := '0';
+signal read_write, cpu_clk : std_logic := '0';
 signal data_to_ram, data_from_ram, ram_address : std_logic_vector(7 downto 0 ) := (others => '0');
 
 signal PC :  std_logic_vector(7 downto 0) := "00000000";
 --signal Data_to_ram_debug, Aadress_to_ram_debug : std_logic_vector (7 downto 0);
 
+
  
 begin
+
+cpu_clk <= clk and not debug;
 
 Flags <= inputs;
 
@@ -431,9 +434,9 @@ begin
  
 end process;
  
-process (clk)
+process (cpu_clk)
 begin
-    if rising_edge(clk) then
+    if rising_edge(cpu_clk) then
         state <= next_state;
     end if;
 end process;

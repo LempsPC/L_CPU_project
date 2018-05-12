@@ -2,10 +2,41 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat May 12 20:50:31 2018
-# Process ID: 12328
-# Current directory: C:/Users/Lemps/L_CPU_project/L-CPU-final
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12300 C:\Users\Lemps\L_CPU_project\L-CPU-final\L-CPU.xpr
-# Log file: C:/Users/Lemps/L_CPU_project/L-CPU-final/vivado.log
-# Journal file: C:/Users/Lemps/L_CPU_project/L-CPU-final\vivado.jou
+# Start of session at: Sat May 12 20:56:00 2018
+# Process ID: 23212
+# Current directory: c:/Users/LempsPC/L_CPU_project/L-CPU-final
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17640 C:\Users\LempsPC\L_CPU_project\L-CPU-final\L-CPU.xpr
+# Log file: c:/Users/LempsPC/L_CPU_project/L-CPU-final/vivado.log
+# Journal file: c:/Users/LempsPC/L_CPU_project/L-CPU-final\vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project C:/Users/LempsPC/L_CPU_project/L-CPU-final/L-CPU.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/LempsPC/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+open_wave_config C:/Users/LempsPC/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+close_sim
+synth_design -rtl -name rtl_1
+close_design
+synth_design -rtl -name rtl_1
+close_design
+synth_design -rtl -name rtl_1
+close_design
+launch_simulation
+open_wave_config C:/Users/LempsPC/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
