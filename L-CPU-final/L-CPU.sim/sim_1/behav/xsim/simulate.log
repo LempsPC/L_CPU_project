@@ -1,3 +1,6 @@
 Vivado Simulator 2017.4
 Time resolution is 1 ps
-$finish called at time : 180 ns : File "C:/Users/LempsPC/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv" Line 50
+@30 Value passed is  58
+@50 Value passed is  25
+cpu flags value is  0
+$finish called at time : 200 ns : File "C:/Users/LempsPC/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv" Line 56
