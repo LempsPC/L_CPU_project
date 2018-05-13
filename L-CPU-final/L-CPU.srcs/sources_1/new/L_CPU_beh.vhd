@@ -13,7 +13,9 @@ port(   reset: in std_logic;
     clk: in std_logic;
     Flags: out std_logic_vector(4 downto 0);
     debug: in std_logic;
-    Data_to_ram_debug, Aadress_to_ram_debug : in std_logic_vector(7 downto 0 )
+    RW_debug : in std_logic;
+    Data_to_ram_debug, Aadress_to_ram_debug : in std_logic_vector(7 downto 0 );
+    Data_from_ram_debug : out std_logic_vector(7 downto 0)
     );
 end L_CPU;  
  
@@ -29,6 +31,7 @@ component Mem is
              RW: in std_logic;
              rst: in std_logic;
              debug : in std_logic;
+             RW_debug : in std_logic;
              Data_Out: out std_logic_vector (BitWidth-1 downto 0);
              Data_in_debug: in std_logic_vector (BitWidth-1 downto 0);
              WrtAddress_debug: in std_logic_vector (BitWidth-1 downto 0) 
@@ -61,18 +64,19 @@ signal data_to_ram, data_from_ram, ram_address : std_logic_vector(7 downto 0 ) :
 
 signal PC :  std_logic_vector(7 downto 0) := "00000000";
 --signal Data_to_ram_debug, Aadress_to_ram_debug : std_logic_vector (7 downto 0);
-
+shared variable data_debug_out : std_logic_vector( 7 downto 0);
 
  
 begin
 
 cpu_clk <= clk and not debug;
-
 Flags <= inputs;
+Data_from_ram_debug <= data_from_ram;
 
 Memory: Mem
 Port map(clk => clk,
          RW => read_write,
+         RW_debug => RW_debug,
          RdAddress => ram_address,
          WrtAddress => ram_address,
          rst => reset,

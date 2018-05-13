@@ -11,6 +11,7 @@ entity Mem is
          RW: in std_logic;
          rst: in std_logic;
          debug : in std_logic;
+         RW_debug : in std_logic;
          Data_Out: out std_logic_vector (BitWidth-1 downto 0);
          Data_in_debug: in std_logic_vector (BitWidth-1 downto 0);
          WrtAddress_debug: in std_logic_vector (BitWidth-1 downto 0) 
@@ -32,7 +33,9 @@ begin
       Mem <= ( others => "00000000");
     elsif rising_edge(clk) then
       if debug = '1' then
+          if(RW_debug = '1') then
             Mem(to_integer(unsigned(WrtAddress_debug(7 downto 0)))) <= Data_in_debug;
+          end if;
       else
           if RW = '1' then
             Mem(to_integer(unsigned(WrtAddress(7 downto 0)))) <= Data_in;

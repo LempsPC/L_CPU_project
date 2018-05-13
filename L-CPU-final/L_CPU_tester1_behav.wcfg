@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="188605401fs"></ZoomEndTime>
-      <Cursor1Time time="50105000fs"></Cursor1Time>
+      <ZoomEndTime time="374931583fs"></ZoomEndTime>
+      <Cursor1Time time="1709000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="149"></NameColumnWidth>
-      <ValueColumnWidth column_width="77"></ValueColumnWidth>
+      <NameColumnWidth column_width="209"></NameColumnWidth>
+      <ValueColumnWidth column_width="73"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="39" />
    <wvobject fp_name="/L_CPU_tester2/my_cpu/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -36,6 +36,10 @@
       <obj_property name="ElementShortName">debug</obj_property>
       <obj_property name="ObjectShortName">debug</obj_property>
    </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/RW_debug" type="logic">
+      <obj_property name="ElementShortName">RW_debug</obj_property>
+      <obj_property name="ObjectShortName">RW_debug</obj_property>
+   </wvobject>
    <wvobject fp_name="/L_CPU_tester2/my_cpu/Data_to_ram_debug" type="array">
       <obj_property name="ElementShortName">Data_to_ram_debug[7:0]</obj_property>
       <obj_property name="ObjectShortName">Data_to_ram_debug[7:0]</obj_property>
@@ -43,6 +47,10 @@
    <wvobject fp_name="/L_CPU_tester2/my_cpu/Aadress_to_ram_debug" type="array">
       <obj_property name="ElementShortName">Aadress_to_ram_debug[7:0]</obj_property>
       <obj_property name="ObjectShortName">Aadress_to_ram_debug[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Data_from_ram_debug" type="array">
+      <obj_property name="ElementShortName">Data_from_ram_debug[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_from_ram_debug[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/L_CPU_tester2/my_cpu/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
@@ -96,6 +104,10 @@
       <obj_property name="ElementShortName">read_write</obj_property>
       <obj_property name="ObjectShortName">read_write</obj_property>
    </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/cpu_clk" type="logic">
+      <obj_property name="ElementShortName">cpu_clk</obj_property>
+      <obj_property name="ObjectShortName">cpu_clk</obj_property>
+   </wvobject>
    <wvobject fp_name="/L_CPU_tester2/my_cpu/data_to_ram" type="array">
       <obj_property name="ElementShortName">data_to_ram[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_to_ram[7:0]</obj_property>
@@ -112,8 +124,56 @@
       <obj_property name="ElementShortName">PC[7:0]</obj_property>
       <obj_property name="ObjectShortName">PC[7:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/RdAddress" type="array">
+      <obj_property name="ElementShortName">RdAddress[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RdAddress[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/Data_in" type="array">
+      <obj_property name="ElementShortName">Data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/WrtAddress" type="array">
+      <obj_property name="ElementShortName">WrtAddress[7:0]</obj_property>
+      <obj_property name="ObjectShortName">WrtAddress[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/RW" type="logic">
+      <obj_property name="ElementShortName">RW</obj_property>
+      <obj_property name="ObjectShortName">RW</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/debug" type="logic">
+      <obj_property name="ElementShortName">debug</obj_property>
+      <obj_property name="ObjectShortName">debug</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/RW_debug" type="logic">
+      <obj_property name="ElementShortName">RW_debug</obj_property>
+      <obj_property name="ObjectShortName">RW_debug</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/Data_Out" type="array">
+      <obj_property name="ElementShortName">Data_Out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_Out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/Data_in_debug" type="array">
+      <obj_property name="ElementShortName">Data_in_debug[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_in_debug[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/WrtAddress_debug" type="array">
+      <obj_property name="ElementShortName">WrtAddress_debug[7:0]</obj_property>
+      <obj_property name="ObjectShortName">WrtAddress_debug[7:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/Mem" type="array">
       <obj_property name="ElementShortName">Mem[0:255][7:0]</obj_property>
       <obj_property name="ObjectShortName">Mem[0:255][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/L_CPU_tester2/my_cpu/Memory/BitWidth" type="other">
+      <obj_property name="ElementShortName">BitWidth</obj_property>
+      <obj_property name="ObjectShortName">BitWidth</obj_property>
    </wvobject>
 </wave_config>

@@ -37,3 +37,54 @@ relaunch_sim
 relaunch_sim
 relaunch_sim
 relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1 us
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+run 1 us
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 71
+relaunch_sim
+add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 82
+run all
+remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 82
+remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 71
+relaunch_sim
+relaunch_sim
+add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 88
+relaunch_sim
+run all
+remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 88
+close_sim
+synth_design -rtl -name rtl_1
+close_design
+launch_simulation
+open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+relaunch_sim
+add_wave {{/L_CPU_tester2/my_cpu}} 
+add_wave {{/L_CPU_tester2/my_cpu/Memory}} 
+save_wave_config {C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg}
+close_sim
+synth_design -rtl -name rtl_1
+close_design
+launch_simulation
+open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
