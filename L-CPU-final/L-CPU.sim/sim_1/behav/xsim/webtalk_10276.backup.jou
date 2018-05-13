@@ -2,8 +2,8 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun May 13 18:41:17 2018
-# Process ID: 8716
+# Start of session at: Sat May 12 18:37:16 2018
+# Process ID: 10276
 # Current directory: C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.sim/sim_1/behav/xsim/xsim.dir/L_CPU_tester2_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.sim/sim_1/behav/xsim/webtalk.log
