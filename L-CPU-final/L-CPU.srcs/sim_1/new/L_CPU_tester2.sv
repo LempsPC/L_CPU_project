@@ -75,7 +75,7 @@ class Testprogram extends Memory;
     task adding(input reg[7:0] operand1, operand2);
         int result;
         
-        insertIntoCell(memoryposition, 17);
+        insertIntoCell(memoryposition, 8'h11);
         memoryposition++;
         insertIntoCell(memoryposition, operand1);
         memoryposition++;
