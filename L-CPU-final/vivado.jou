@@ -2,10 +2,10 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun May 13 17:41:35 2018
-# Process ID: 7984
+# Start of session at: Tue May 15 16:55:05 2018
+# Process ID: 13824
 # Current directory: C:/Users/Lemps/L_CPU_project/L-CPU-final
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12064 C:\Users\Lemps\L_CPU_project\L-CPU-final\L-CPU.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7284 C:\Users\Lemps\L_CPU_project\L-CPU-final\L-CPU.xpr
 # Log file: C:/Users/Lemps/L_CPU_project/L-CPU-final/vivado.log
 # Journal file: C:/Users/Lemps/L_CPU_project/L-CPU-final\vivado.jou
 #-----------------------------------------------------------
@@ -13,78 +13,23 @@ start_gui
 open_project C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.xpr
 update_compile_order -fileset sources_1
 launch_simulation
-launch_simulation
-launch_simulation
 open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
 source L_CPU_tester2.tcl
 relaunch_sim
-close_sim
-launch_simulation
-open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
-source L_CPU_tester2.tcl
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 10 us
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 1 us
-close_sim
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
-open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
-source L_CPU_tester2.tcl
-run 1 us
-relaunch_sim
-relaunch_sim
-run 1 us
-relaunch_sim
-run 1 us
-relaunch_sim
-run 1 us
-add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 71
-relaunch_sim
-add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 82
-run all
-remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 82
-remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 71
-relaunch_sim
-relaunch_sim
-add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 88
-relaunch_sim
-run all
-remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 88
 close_sim
 synth_design -rtl -name rtl_1
 close_design
 launch_simulation
 open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
 source L_CPU_tester2.tcl
-relaunch_sim
-add_wave {{/L_CPU_tester2/my_cpu}} 
-add_wave {{/L_CPU_tester2/my_cpu/Memory}} 
-save_wave_config {C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg}
 close_sim
-synth_design -rtl -name rtl_1
-close_design
 launch_simulation
 open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
 source L_CPU_tester2.tcl
 relaunch_sim
 relaunch_sim
 relaunch_sim
-close_sim
+relaunch_sim
+relaunch_sim
+add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 100
+remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 100

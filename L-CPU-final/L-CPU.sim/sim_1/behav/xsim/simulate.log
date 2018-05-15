@@ -1,0 +1,93 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+@20 Inserted data  17 into register   0
+@30 Inserted data   2 into register   1
+@40 Inserted data  18 into register   2
+@50 Inserted data   0 into register   3
+@60 Inserted data 163 into register   4
+@70 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           2
+Addition testing completed successfully
+@380 Inserted data  17 into register   0
+@390 Inserted data   2 into register   1
+@400 Inserted data  18 into register   2
+@410 Inserted data   1 into register   3
+@420 Inserted data 163 into register   4
+@430 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           3
+Addition testing completed successfully
+@740 Inserted data  17 into register   0
+@750 Inserted data   2 into register   1
+@760 Inserted data  18 into register   2
+@770 Inserted data   2 into register   3
+@780 Inserted data 163 into register   4
+@790 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           4
+Addition testing completed successfully
+@1100 Inserted data  17 into register   0
+@1110 Inserted data   2 into register   1
+@1120 Inserted data  18 into register   2
+@1130 Inserted data   3 into register   3
+@1140 Inserted data 163 into register   4
+@1150 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           5
+Addition testing completed successfully
+@1460 Inserted data  17 into register   0
+@1470 Inserted data   2 into register   1
+@1480 Inserted data  18 into register   2
+@1490 Inserted data   4 into register   3
+@1500 Inserted data 163 into register   4
+@1510 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           6
+Addition testing completed successfully
+@1820 Inserted data  17 into register   0
+@1830 Inserted data   2 into register   1
+@1840 Inserted data  18 into register   2
+@1850 Inserted data   5 into register   3
+@1860 Inserted data 163 into register   4
+@1870 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           7
+Addition testing completed successfully
+@2180 Inserted data  17 into register   0
+@2190 Inserted data   2 into register   1
+@2200 Inserted data  18 into register   2
+@2210 Inserted data   6 into register   3
+@2220 Inserted data 163 into register   4
+@2230 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           8
+Addition testing completed successfully
+@2540 Inserted data  17 into register   0
+@2550 Inserted data   2 into register   1
+@2560 Inserted data  18 into register   2
+@2570 Inserted data   7 into register   3
+@2580 Inserted data 163 into register   4
+@2590 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is           9
+Addition testing completed successfully
+@2900 Inserted data  17 into register   0
+@2910 Inserted data   2 into register   1
+@2920 Inserted data  18 into register   2
+@2930 Inserted data   8 into register   3
+@2940 Inserted data 163 into register   4
+@2950 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is          10
+Addition testing completed successfully
+@3260 Inserted data  17 into register   0
+@3270 Inserted data   2 into register   1
+@3280 Inserted data  18 into register   2
+@3290 Inserted data   9 into register   3
+@3300 Inserted data 163 into register   4
+@3310 Inserted data  40 into register   5
+Reading result from cell           6
+Result value is          11
+Addition testing completed successfully
+$finish called at time : 3605 ns : File "C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv" Line 131

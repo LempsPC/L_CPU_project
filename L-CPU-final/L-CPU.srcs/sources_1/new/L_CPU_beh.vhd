@@ -95,6 +95,23 @@ variable ALU_OUT, RegTemp : std_logic_vector(7 downto 0) := (others => '0');
 variable ADD_SUB_OUT : std_logic_vector(8 downto 0) := (others => '0');
 
 begin
+    if reset = '1' then
+        PC  <= (others => '0');
+        --Flags <= (others => '0');
+        inner_flags <= (others => '0');
+        operators <= (others => '0');
+        MAR <= (others => '0');
+        MDR <= (others => '0');
+        IR <= (others => '0');
+        operators <= (others => '0');
+        RegA <= (others => '0');
+        RegB <= (others => '0');
+        RegC <= (others => '0');
+        RegM <= (others => '0');
+        ram_address <= (others => '0');
+        next_state <= RAM_to_MDR;
+    else
+    
     case state is
    
         when PC_to_MAR =>
@@ -429,19 +446,24 @@ begin
             read_write <= '0'; 
             data_to_ram <= (others => '0');
         when others =>
-            next_state <= END_Command;
-       
-       
-               
-   
+            next_state <= END_Command; 
     end case;
+ 
+    end if;
+ 
  
 end process;
  
 process (cpu_clk)
 begin
+    
     if rising_edge(cpu_clk) then
-        state <= next_state;
+        if reset = '1' then
+            state <= PC_to_MAR;
+        else
+            state <= next_state;
+        end if;
+        
     end if;
 end process;
 

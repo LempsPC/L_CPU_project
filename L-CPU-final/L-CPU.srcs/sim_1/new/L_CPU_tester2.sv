@@ -73,8 +73,10 @@ class Testprogram extends Memory;
     
     //this task checks cpu addition operation with adding 2 numbers and then checking answers
     task adding(input reg[7:0] operand1, operand2);
-        int result;
-        
+        int result = 0;
+        reset <=1;
+        @(negedge clk);
+        reset <= 0;
         insertIntoCell(memoryposition, 8'h11);
         memoryposition++;
         insertIntoCell(memoryposition, operand1);
@@ -102,7 +104,8 @@ class Testprogram extends Memory;
         if (operand1 + operand2 != result)
             $display ("Fault in addition testing");
         else
-            $display ("Addition testing completed successfully");  
+            $display ("Addition testing completed successfully");
+        memoryposition = 0;  
     endtask;
     
 endclass: Testprogram;
@@ -117,14 +120,14 @@ initial begin
    clk<=0;
    reset<=1;
    debug<=1;
+   RW_debug<=0;
    Data_to_ram_debug <= 0;
    Aadress_to_ram_debug <= 0;
    
 #10 reset<=0;
-
-proge.adding(3, 5);
-
-
+for(int i=0; i < 10; i++) begin
+    proge.adding(2, i);
+end;
 $finish;
 end
 
