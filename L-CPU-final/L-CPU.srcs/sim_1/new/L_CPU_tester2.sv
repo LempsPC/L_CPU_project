@@ -6,7 +6,7 @@
 //käsud, mida ma testin:
 /*
 liitmine - funktsioonile antakse 2 random arvu ette, kontrollib tulemust
-ringnihe
+ringnihe - funktsioon, antakse 1 random arv ette, mida shiftib
 dekrementeerimine
 inverteerimine
 võrdlus
@@ -122,9 +122,9 @@ class Testprogram extends Memory;
     
     task shiftleft(input reg[7:0] operand);
         
-        int resultfromcpu = 0;
+        reg[7:0] resultfromcpu;
         reg[7:0] actualresult; 
-        actualresult <= {operand[6:0], operand[7]}; 
+        actualresult = {operand[6:0], operand[7]}; 
         reset <= 1;
         @(posedge clk);
         
@@ -147,7 +147,47 @@ class Testprogram extends Memory;
         debug <= 1;
         $display ("Reading result from cell %d", memoryposition);
         resultfromcpu =  Data_from_ram_debug;
+        $display ("Got result from CPU: %8b", resultfromcpu);
+        if(resultfromcpu == actualresult)
+            $display("Left round shifting test completed successfully");
+        else
+            $display("Shift round left test FAILED");
+        debug<=0;
+        memoryposition = 0;
+    endtask;
+    
+    task decrement(input reg[7:0] operand);
+        int resultfromcpu = 0;
+        reg[7:0] actualresult;
+        actualresult = operand -1;
+        reset <= 1;
+        @(posedge clk);
+                
+        $display("Decrementable value before: %b", operand);
+        $display("Actuable result should be: %b", actualresult);
+        reset <= 0;
         
+        insertIntoCell(memoryposition, 8'h12); //load into B register from next emmory cell
+        memoryposition++;
+        insertIntoCell(memoryposition, operand);
+        memoryposition++;
+        insertIntoCell(memoryposition, 8'hFB); // B decrement, result into C
+        memoryposition++;
+        insertIntoCell(memoryposition, 8'h28);
+        memoryposition++;
+        for( int i = 0; i < 20; i++) begin
+            @(negedge clk);
+        end;
+        debug<=1; 
+        $display ("Reading result from cell %d", memoryposition);
+        resultfromcpu =  Data_from_ram_debug;
+        $display ("Got result from CPU: %8b", resultfromcpu);
+        if(resultfromcpu == actualresult)
+            $display("Decrementing test completed successfully");
+        else
+            $display("Decrementing test FAILED");
+        debug<=0;
+        memoryposition = 0;       
     endtask;
 endclass: Testprogram;
 
@@ -167,17 +207,23 @@ initial begin
    datareg <= 8'h91;
 #10 reset<=0;
 
-proge.shiftleft($urandom_range(255,1));
+//proge.shiftleft($urandom_range(255,1));
 
-/*
-for(int i=0; i < 5; i++) begin
+    /*
+    proge.shiftleft($urandom_range(255,1));
     proge.adding($urandom_range(128,1), $urandom_range(128,1));
-end;
-*/
+    proge.shiftleft($urandom_range(255,1));
+    */
+    proge.decrement($urandom_range(255,1) );
+    proge.adding($urandom_range(128,1), $urandom_range(128,1));
+    
+    
+    /*
     $display("Initial number is %b", datareg);
     datareg2 <= {datareg[6:0], datareg[7]};
     @(posedge clk);
     $display("Shifted left number is %b", datareg2);
+    */
     $finish;
 
 
