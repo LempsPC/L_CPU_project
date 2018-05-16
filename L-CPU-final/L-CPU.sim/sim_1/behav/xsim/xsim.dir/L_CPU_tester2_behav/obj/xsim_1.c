@@ -45,30 +45,30 @@
 typedef void (*funcp)(char *, char *);
 extern int main(int, char**);
 extern void execute_2(char*, char *);
-extern void execute_73(char*, char *);
-extern void execute_74(char*, char *);
-extern void execute_79(char*, char *);
-extern void execute_80(char*, char *);
-extern void execute_65(char*, char *);
-extern void execute_66(char*, char *);
-extern void execute_67(char*, char *);
-extern void execute_71(char*, char *);
-extern void execute_72(char*, char *);
-extern void execute_69(char*, char *);
-extern void execute_70(char*, char *);
-extern void execute_76(char*, char *);
 extern void execute_77(char*, char *);
 extern void execute_78(char*, char *);
-extern void execute_81(char*, char *);
-extern void execute_82(char*, char *);
 extern void execute_83(char*, char *);
 extern void execute_84(char*, char *);
+extern void execute_69(char*, char *);
+extern void execute_70(char*, char *);
+extern void execute_71(char*, char *);
+extern void execute_75(char*, char *);
+extern void execute_76(char*, char *);
+extern void execute_73(char*, char *);
+extern void execute_74(char*, char *);
+extern void execute_80(char*, char *);
+extern void execute_81(char*, char *);
+extern void execute_82(char*, char *);
 extern void execute_85(char*, char *);
-extern void transaction_29(char*, char*, unsigned, unsigned, unsigned);
+extern void execute_86(char*, char *);
+extern void execute_87(char*, char *);
+extern void execute_88(char*, char *);
+extern void execute_89(char*, char *);
+extern void transaction_42(char*, char*, unsigned, unsigned, unsigned);
 extern void vhdl_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-extern void transaction_31(char*, char*, unsigned, unsigned, unsigned);
-extern void transaction_37(char*, char*, unsigned, unsigned, unsigned);
-extern void transaction_51(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_44(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_50(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_64(char*, char*, unsigned, unsigned, unsigned);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
 extern void transaction_0(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_1(char*, char*, unsigned, unsigned, unsigned);
@@ -77,14 +77,14 @@ extern void transaction_4(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_5(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_6(char*, char*, unsigned, unsigned, unsigned);
 extern void vlog_transfunc_eventcallback_2state(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[33] = {(funcp)execute_2, (funcp)execute_73, (funcp)execute_74, (funcp)execute_79, (funcp)execute_80, (funcp)execute_65, (funcp)execute_66, (funcp)execute_67, (funcp)execute_71, (funcp)execute_72, (funcp)execute_69, (funcp)execute_70, (funcp)execute_76, (funcp)execute_77, (funcp)execute_78, (funcp)execute_81, (funcp)execute_82, (funcp)execute_83, (funcp)execute_84, (funcp)execute_85, (funcp)transaction_29, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_31, (funcp)transaction_37, (funcp)transaction_51, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_0, (funcp)transaction_1, (funcp)transaction_3, (funcp)transaction_4, (funcp)transaction_5, (funcp)transaction_6, (funcp)vlog_transfunc_eventcallback_2state};
+funcp funcTab[33] = {(funcp)execute_2, (funcp)execute_77, (funcp)execute_78, (funcp)execute_83, (funcp)execute_84, (funcp)execute_69, (funcp)execute_70, (funcp)execute_71, (funcp)execute_75, (funcp)execute_76, (funcp)execute_73, (funcp)execute_74, (funcp)execute_80, (funcp)execute_81, (funcp)execute_82, (funcp)execute_85, (funcp)execute_86, (funcp)execute_87, (funcp)execute_88, (funcp)execute_89, (funcp)transaction_42, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_44, (funcp)transaction_50, (funcp)transaction_64, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_0, (funcp)transaction_1, (funcp)transaction_3, (funcp)transaction_4, (funcp)transaction_5, (funcp)transaction_6, (funcp)vlog_transfunc_eventcallback_2state};
 const int NumRelocateId= 33;
 
 void relocate(char *dp)
 {
 	iki_relocate(dp, "xsim.dir/L_CPU_tester2_behav/xsim.reloc",  (void **)funcTab, 33);
-	iki_vhdl_file_variable_register(dp + 22448);
-	iki_vhdl_file_variable_register(dp + 22504);
+	iki_vhdl_file_variable_register(dp + 24768);
+	iki_vhdl_file_variable_register(dp + 24824);
 
 
 	/*Populate the transaction function pointer field in the whole net structure */
@@ -101,9 +101,9 @@ iki_register_root_pointers(1, 15136, 2,0) ;
 	iki_schedule_processes_at_time_zero(dp, "xsim.dir/L_CPU_tester2_behav/xsim.reloc");
 	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
 
-	iki_vlog_schedule_transaction_signal_fast_vhdl_value_time_0(dp + 29896, dp + 25272, 0, 4, 0, 4, 5, 1);
+	iki_vlog_schedule_transaction_signal_fast_vhdl_value_time_0(dp + 35200, dp + 27592, 0, 4, 0, 4, 5, 1);
 
-	iki_vlog_schedule_transaction_signal_fast_vhdl_value_time_0(dp + 30128, dp + 25384, 0, 7, 0, 7, 8, 1);
+	iki_vlog_schedule_transaction_signal_fast_vhdl_value_time_0(dp + 35432, dp + 27704, 0, 7, 0, 7, 8, 1);
 	iki_execute_processes();
 
 	// Schedule resolution functions for the multiply driven Verilog nets that have strength

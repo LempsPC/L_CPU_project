@@ -7,8 +7,8 @@
 /*
 liitmine - funktsioonile antakse 2 random arvu ette, kontrollib tulemust
 ringnihe - funktsioon, antakse 1 random arv ette, mida shiftib
-dekrementeerimine
-inverteerimine
+dekrementeerimine - funktsioon, antakse 1 random arv ette, mida dekrementeeritakse
+inverteerimine - funktsioonile antakse 1 arv ette, mida inverteeritakse
 võrdlus
 
 */
@@ -189,6 +189,90 @@ class Testprogram extends Memory;
         debug<=0;
         memoryposition = 0;       
     endtask;
+    
+    task invert(input reg[7:0] operand);
+        int resultfromcpu = 0;
+        reg[7:0] actualresult;
+        reset <= 1;
+        @(posedge clk);
+        actualresult = ~operand;
+        $display("Generated value is %b" ,operand);
+        $display("inverted result should be %b", actualresult);
+        reset <= 0;
+        
+        insertIntoCell(memoryposition, 8'h12); //load into B register from next emmory cell
+        memoryposition++;
+        insertIntoCell(memoryposition, operand);
+        memoryposition++;
+        insertIntoCell(memoryposition, 8'hEB); // B invert, result into C
+        memoryposition++;
+        insertIntoCell(memoryposition, 8'h28);
+        memoryposition++;
+        for( int i = 0; i < 20; i++) begin
+            @(negedge clk);
+        end;
+        debug<=1; 
+        $display ("Reading result from cell %d", memoryposition);
+        resultfromcpu =  Data_from_ram_debug;
+        
+        
+        
+        $display("Debug value is %d", debug);
+         
+        
+        $display ("Reading result from cell %d", memoryposition);
+        resultfromcpu =  Data_from_ram_debug;
+        $display ("Got result from CPU: %8b", resultfromcpu);
+        @(posedge clk);
+        if(resultfromcpu == actualresult)
+            $display("Inverting test completed successfully");
+        else
+            $display("Inverting test FAILED");
+        debug<=0;
+        memoryposition = 0; 
+                
+    endtask;
+    
+    task logicalxor(input reg[7:0] operand1, operand2);
+        int resultfromcpu = 0;
+        reg[7:0] actualresult;
+        reset <= 1;
+        @(posedge clk);
+        actualresult = operand1 ^ operand2;
+        $display("Generated values are %b and %b" ,operand1, operand2);
+        $display("Result should be %b", actualresult);
+        reset <= 0;
+            
+        insertIntoCell(memoryposition, 8'h11);
+        memoryposition++;
+        insertIntoCell(memoryposition, operand1);
+        memoryposition++;
+        insertIntoCell(memoryposition, 18);
+        memoryposition++;
+        insertIntoCell(memoryposition, operand2);
+        memoryposition++;
+        insertIntoCell(memoryposition, 8'h9B); //adding command
+        memoryposition++;
+        insertIntoCell(memoryposition, 40);
+        memoryposition = memoryposition +1;
+        //28 times loop, waiting for program to finish
+        for( int i = 0; i < 28; i++) begin
+            @(negedge clk);
+        end;
+        debug <= 1;
+     
+                 
+        $display ("Reading result from cell %d", memoryposition);
+        resultfromcpu =  Data_from_ram_debug;
+        $display ("Got result from CPU: %8b", resultfromcpu);
+        @(posedge clk);
+        if(resultfromcpu == actualresult)
+            $display("Logic XOR test completed successfully");
+        else
+            $display("Logic XOR test FAILED");
+        debug<=0;
+        memoryposition = 0; 
+    endtask;
 endclass: Testprogram;
 
 
@@ -209,15 +293,20 @@ initial begin
 
 //proge.shiftleft($urandom_range(255,1));
 
-    /*
+    
     proge.shiftleft($urandom_range(255,1));
     proge.adding($urandom_range(128,1), $urandom_range(128,1));
-    proge.shiftleft($urandom_range(255,1));
-    */
+    proge.decrement($urandom_range(255,1) );
+    proge.logicalxor($urandom_range(255,1), $urandom_range(255,1));
+    /*
     proge.decrement($urandom_range(255,1) );
     proge.adding($urandom_range(128,1), $urandom_range(128,1));
     
-    
+    proge.shiftleft($urandom_range(255,1));
+    proge.invert($urandom_range(255,1) );
+    proge.decrement($urandom_range(255,1) );
+    */
+    proge.logicalxor($urandom_range(255,1), $urandom_range(255,1));
     /*
     $display("Initial number is %b", datareg);
     datareg2 <= {datareg[6:0], datareg[7]};
