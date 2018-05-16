@@ -2,6 +2,17 @@
 //+++++++++++++++++++++++++++++++++++++++++++++++
 //   Testbench Code
 //+++++++++++++++++++++++++++++++++++++++++++++++
+
+//käsud, mida ma testin:
+/*
+liitmine - funktsioonile antakse 2 random arvu ette, kontrollib tulemust
+ringnihe
+dekrementeerimine
+inverteerimine
+võrdlus
+
+*/
+
 module L_CPU_tester2();
 
 reg clk;
@@ -16,7 +27,8 @@ reg [7:0] Data_from_ram_debug;
 always #5 clk ++;
 
 int memoryposition = 0;
-
+int randomnumber = 0;
+reg [7:0] dstareg, datareg2;
 class Memory;
 	
 	int instcount = 0;
@@ -125,9 +137,14 @@ initial begin
    Aadress_to_ram_debug <= 0;
    
 #10 reset<=0;
-for(int i=0; i < 10; i++) begin
-    proge.adding(2, i);
+
+
+
+for(int i=0; i < 5; i++) begin
+    proge.adding($urandom_range(128,1), $urandom_range(128,1));
 end;
+
+$display("Random number is %d", $urandom_range(10,1));
 $finish;
 end
 

@@ -33,3 +33,19 @@ relaunch_sim
 relaunch_sim
 add_bp {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} 100
 remove_bps -file {C:/Users/Lemps/L_CPU_project/L-CPU-final/L-CPU.srcs/sim_1/new/L_CPU_tester2.sv} -line 100
+relaunch_sim
+run 1 us
+run 1 us
+run 1 us
+run 1 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/Lemps/L_CPU_project/L-CPU-final/L_CPU_tester1_behav.wcfg
+source L_CPU_tester2.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+close_sim
