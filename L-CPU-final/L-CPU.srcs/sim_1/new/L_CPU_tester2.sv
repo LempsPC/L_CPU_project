@@ -28,7 +28,7 @@ always #5 clk ++;
 
 int memoryposition = 0;
 int randomnumber = 0;
-reg [7:0] dstareg, datareg2;
+reg [7:0] datareg, datareg2;
 class Memory;
 	
 	int instcount = 0;
@@ -120,6 +120,35 @@ class Testprogram extends Memory;
         memoryposition = 0;  
     endtask;
     
+    task shiftleft(input reg[7:0] operand);
+        
+        int resultfromcpu = 0;
+        reg[7:0] actualresult; 
+        actualresult <= {operand[6:0], operand[7]}; 
+        reset <= 1;
+        @(posedge clk);
+        
+        $display("Shiftable value before shifting: %b", operand);
+        $display("Actuable result should be: %b", actualresult);
+        reset <= 0;
+        
+        insertIntoCell(memoryposition, 8'h11); //load into A register from next emmory cell
+        memoryposition++;
+        insertIntoCell(memoryposition, operand);
+        memoryposition++;
+        insertIntoCell(memoryposition, 8'hD3); //A shift left, result into C
+        memoryposition++;
+        insertIntoCell(memoryposition, 8'h28);
+        memoryposition++;
+        for( int i = 0; i < 20; i++) begin
+            @(negedge clk);
+        end;
+        
+        debug <= 1;
+        $display ("Reading result from cell %d", memoryposition);
+        resultfromcpu =  Data_from_ram_debug;
+        
+    endtask;
 endclass: Testprogram;
 
 
@@ -135,17 +164,25 @@ initial begin
    RW_debug<=0;
    Data_to_ram_debug <= 0;
    Aadress_to_ram_debug <= 0;
-   
+   datareg <= 8'h91;
 #10 reset<=0;
 
+proge.shiftleft($urandom_range(255,1));
 
-
+/*
 for(int i=0; i < 5; i++) begin
     proge.adding($urandom_range(128,1), $urandom_range(128,1));
 end;
+*/
+    $display("Initial number is %b", datareg);
+    datareg2 <= {datareg[6:0], datareg[7]};
+    @(posedge clk);
+    $display("Shifted left number is %b", datareg2);
+    $finish;
 
-$display("Random number is %d", $urandom_range(10,1));
-$finish;
+
+
+
 end
 
 
